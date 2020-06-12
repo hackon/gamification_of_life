@@ -17,9 +17,13 @@
     "compression": "^1.7.4",
     "express": "^4.17.1",
     "helmet": "^3.22.1",
-    "morgan": "^1.10.0"
+    "knex": "^0.21.1",
+    "morgan": "^1.10.0",
+    "objection": "^2.2.0",
+    "pg": "^8.2.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.3"
+    "nodemon": "^2.0.3",
+    "sqlite3": "^4.2.0"
   }
 }
