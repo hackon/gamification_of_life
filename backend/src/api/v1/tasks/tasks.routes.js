@@ -41,4 +41,14 @@ router.post('/', async (req, res) => {
     return next(error)
   }
 })
+
+router.delete('/:id', async (req, res) => {
+  const { id } = req.params
+  try {
+    queries.del(id)
+    return next({ id })
+  } catch (error) {
+    return next(error)
+  }
+})
 module.exports = router

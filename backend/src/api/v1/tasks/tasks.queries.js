@@ -29,9 +29,13 @@ async function create(task) {
     })
     .returning(fields)
 }
+async function del(id) {
+  return db(tableNames.tasks).where({ id }).del()
+}
 
 module.exports = {
   find,
   get,
   create,
+  del,
 }
