@@ -4,7 +4,7 @@ const compression = require('compression')
 const helmet = require('helmet')
 
 const middleware = require('./middlewares')
-const api = require('./api/v1')
+const api = require('./api')
 
 const app = express()
 
@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
   })
 })
 
-app.use('/api/v1', api)
+app.use('/api', api)
 
 app.use(middleware.notFound)
 app.use(middleware.errorHandler)

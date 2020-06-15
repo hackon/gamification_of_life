@@ -22,7 +22,7 @@ router.get('/:id', async (req, res, next) => {
   }
 })
 
-router.post('/', async (req, res) => {
+router.post('/', async (req, res, next) => {
   const { parentId, title, description, start, end } = req.body
 
   try {
@@ -34,7 +34,7 @@ router.post('/', async (req, res) => {
       end,
     })
     if (task) {
-      return res.json(task)
+      return await res.json(task)
     }
     return next()
   } catch (error) {
@@ -42,7 +42,7 @@ router.post('/', async (req, res) => {
   }
 })
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', async (req, res, next) => {
   const { id } = req.params
   try {
     queries.del(id)
